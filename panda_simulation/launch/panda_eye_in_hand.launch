@@ -29,7 +29,7 @@
 
     <!-- Load joint controller configurations from YAML file to parameter server -->
     <rosparam file="$(find panda_simulation)/config/effort_control.yaml" command="load" />
-
+    <node pkg="gazebo_grasp_plugin_ros" type="grasp_event_republisher" name="gazebo_grasp_plugin_event_republisher" output="screen"/>
 
     <!-- load the controllers -->
     <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" args="joint_state_controller panda_arm_controller" />
