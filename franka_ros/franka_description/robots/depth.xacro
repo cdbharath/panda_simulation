@@ -62,7 +62,7 @@
 	  <frameName>${sensor_name}_optical_link</frameName>
 	  <pointCloudCutoff>0.1</pointCloudCutoff>
 	  <pointCloudCutoffMax>3</pointCloudCutoffMax>
-	  <distortionK1>0</distortionK1>
+	  <!-- <distortionK1>0</distortionK1>
 	  <distortionK2>0</distortionK2>
 	  <distortionK3>0</distortionK3>
 	  <distortionT1>0</distortionT1>
@@ -71,7 +71,7 @@
 	  <Cx>0</Cx>
 	  <Cy>0</Cy>
 	  <focalLength>0</focalLength>
-	  <hackBaseline>0</hackBaseline>
+	  <hackBaseline>0</hackBaseline> -->
 	</plugin>
       </sensor>
     </gazebo>
