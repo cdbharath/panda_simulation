@@ -4,6 +4,6 @@
     <include if="$(arg overhead_camera)" file="$(find panda_simulation)/launch/panda_overhead.launch"/>    
     <include unless="$(arg overhead_camera)" file="$(find panda_simulation)/launch/panda_eye_in_hand.launch"/>
 
-    <node pkg="moveit_adapter" type="moveit_adapter_node" name="moveit_adapter_node" output="screen" />
+    <node pkg="moveit_adapter" type="moveit_adapter_node.py" name="moveit_adapter_node" output="screen" />
 
 </launch>
