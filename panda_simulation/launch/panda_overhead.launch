@@ -1,7 +1,9 @@
 <launch>
+    <param name="table" command="$(find xacro)/xacro $(find panda_simulation)/urdf/table.sdf" />
+    <param name="platform" command="$(find xacro)/xacro $(find panda_simulation)/urdf/objects/platform.urdf" />
     <param name="robot_description" command="$(find xacro)/xacro --inorder $(find franka_description)/robots/panda_arm_hand.urdf.xacro" />
 
-    <node name="map_world_frame" pkg="tf" type="static_transform_publisher" args="0 0 0 0 0 0 map world 100" />
+    <node name="map_world_frame" pkg="tf" type="static_transform_publisher" args="0 0 0.4 0 0 0 map world 100" />
     <node name="world_panda_frame" pkg="tf" type="static_transform_publisher" args="0 0 0 0 0 0 world panda_link0 100" />  
 
     <!-- GAZEBO arguments -->
@@ -22,6 +24,8 @@
         <arg name="headless" value="$(arg headless)" />
     </include>
 
+    <node name="spawn_platform" pkg="gazebo_ros" type="spawn_model" args="-param platform -urdf -model platform" output="screen"/>
+    <node name="spawn_table" pkg="gazebo_ros" type="spawn_model" args="-param table -sdf -x 0.5 -model table" output="screen"/>
     <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -model panda" />
 
     <!-- Load joint controller configurations from YAML file to parameter server -->

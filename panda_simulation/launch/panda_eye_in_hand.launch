@@ -1,9 +1,9 @@
 <launch>
+    <param name="table" command="$(find xacro)/xacro $(find panda_simulation)/urdf/table.sdf" />
+    <param name="platform" command="$(find xacro)/xacro $(find panda_simulation)/urdf/objects/platform.urdf" />
     <param name="robot_description" command="$(find xacro)/xacro $(find franka_description)/robots/panda_arm_camera.urdf.xacro" />
-    <!-- <param name="robot_description" command="$(find xacro)/xacro $(find franka_description)/robots/panda_arm_hand.urdf.xacro" /> -->
-    <!-- <param name="robot_description_work_around" command="$(find xacro)/xacro $(find franka_description)/robots/panda_arm_camera.urdf.xacro" /> -->
-
-    <node name="map_world_frame" pkg="tf" type="static_transform_publisher" args="0 0 0 0 0 0 map world 100" />
+ 
+    <node name="map_world_frame" pkg="tf" type="static_transform_publisher" args="0 0 0.4 0 0 0 map world 100" />
     <node name="world_panda_frame" pkg="tf" type="static_transform_publisher" args="0 0 0 0 0 0 world panda_link0 100" />  
 
     <!-- GAZEBO arguments -->
@@ -24,8 +24,9 @@
         <arg name="headless" value="$(arg headless)" />
     </include>
 
-    <!-- <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description_work_around -urdf -model panda" /> -->
-    <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -model panda" />
+    <node name="spawn_platform" pkg="gazebo_ros" type="spawn_model" args="-param platform -urdf -model platform" output="screen"/>
+    <node name="spawn_table" pkg="gazebo_ros" type="spawn_model" args="-param table -sdf -x 0.5 -model table" output="screen"/>
+    <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -z 0.4 -model panda" />
 
     <!-- Load joint controller configurations from YAML file to parameter server -->
     <rosparam file="$(find panda_simulation)/config/effort_control.yaml" command="load" />
@@ -60,6 +61,6 @@
     <node pkg="controller_manager" type="spawner" name="joint_position_launcher2" args="panda_finger1_controller panda_finger2_controller" />
 
     <!-- run custom node for automatic intialization -->
-    <node pkg="panda_simulation" type="robot_state_initializer_node" name="robot_state_initializer_node" />
+    <!-- <node pkg="panda_simulation" type="robot_state_initializer_node" name="robot_state_initializer_node" /> -->
  
 </launch>
