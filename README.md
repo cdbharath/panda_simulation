@@ -8,7 +8,7 @@ This is a part of benchmarking vision based grasping algorithms project. The rep
 ```
 mkdir -p panda_sim_ws/src
 cd panda_sim_ws/src
-git clone git@github.com:cdbharath/franka_panda.git
+git clone git@github.com:cdbharath/panda_simulation.git
 cd ..
 sudo apt install ros-<distro>-libfranka
 catkin build
