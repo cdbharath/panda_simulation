@@ -2,7 +2,7 @@
 
 Research under Prof Berk Calli (Manipulation and Environmental Robotics Lab, Worcester Polytechnic Institute)
 
-This is a part of benchmarking vision based grasping algorithms project. The repository provides a simulation environment for Franka Panda robot build in Gazebo. The joints are effort controlled. The gripper uses [grasp plugin](https://github.com/JenniferBuehler/gazebo-pkgs "grasp plugin")  for simulation the grasps.
+This is a part of benchmarking vision based grasping algorithms project. The repository provides a simulation environment for Franka Panda robot build in Gazebo. The joints are effort controlled. The gripper uses [grasp plugin](https://github.com/JenniferBuehler/gazebo-pkgs "grasp plugin")  for simulating the grasps.
 
 ## Installation Instructions
 ```
