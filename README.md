@@ -1,0 +1,28 @@
+# Franka Panda Simulator
+
+Research under Prof Berk Calli (Manipulation and Environmental Robotics Lab, Worcester Polytechnic Institute)
+
+This is a part of benchmarking vision based grasping algorithms project. The repository provides a simulation environment for Franka Panda robot build in Gazebo. The joints are effort controlled. The gripper uses [grasp plugin](https://github.com/JenniferBuehler/gazebo-pkgs "grasp plugin")  for simulation the grasps.
+
+## Installation Instructions
+```
+mkdir -p panda_sim_ws/src
+cd panda_sim_ws/src
+git clone git@github.com:cdbharath/franka_panda.git
+cd ..
+sudo apt install ros-<distro>-libfranka
+catkin build
+source devel/setup.bash
+```
+
+## How to run:
+```
+roslaunch panda_simulation panda_simulation.launch  # eye in hand mode (used for our experiments)
+
+# The simulator can also run in overhead camera mode
+roslaunch panda_simulation panda_simulation.launch over_head:=true
+```
+
+## References:
+1. [Panda Simulator](https://github.com/erdalpekel/panda_simulation "Panda Simulator")
+2. [Grasp plugin](https://github.com/JenniferBuehler/gazebo-pkgs "Grasp plugin")
