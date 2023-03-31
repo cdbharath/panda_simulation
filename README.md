@@ -8,7 +8,7 @@ This is a part of benchmarking vision based grasping algorithms project. The rep
 ```
 mkdir -p panda_sim_ws/src
 cd panda_sim_ws/src
-git clone git@github.com:cdbharath/panda_simulation.git
+git clone https://github.com/cdbharath/panda_simulation.git
 cd ..
 sudo apt install ros-<distro>-libfranka
 catkin build
@@ -22,6 +22,9 @@ roslaunch panda_simulation panda_simulation.launch  # eye in hand mode (used for
 # The simulator can also run in overhead camera mode
 roslaunch panda_simulation panda_simulation.launch over_head:=true
 ```
+
+## Note
+There are some common packages between simulator repository and benchmarking repository. It is better to have them in separate ROS workspaces
 
 ## References:
 1. [Panda Simulator](https://github.com/erdalpekel/panda_simulation "Panda Simulator")
