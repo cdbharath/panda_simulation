@@ -23,14 +23,14 @@
     <node name="spawn_kinect" pkg="gazebo_ros" type="spawn_model" args="-param kinect -urdf -model kinect" />
 
     <!-- spawn sdfs -->
-    <param name="j_cups" command="$(find xacro)/xacro $(find panda_simulation)/urdf/objects/065-j_cups/j_cups.sdf" />
     <param name="flat_screwdriver" command="$(find xacro)/xacro $(find panda_simulation)/urdf/objects/044_flat_screwdriver/flat_screwdriver.sdf" />
     <param name="medium_clamp" command="$(find xacro)/xacro $(find panda_simulation)/urdf/objects/050_medium_clamp/medium_clamp.sdf" />
     <param name="ball" command="$(find xacro)/xacro $(find panda_simulation)/urdf/objects/025_mug/mug.sdf" />
+    <param name="mustard" command="$(find xacro)/xacro $(find panda_simulation)/urdf/objects/006_mustard_bottle/mustard_bottle.sdf" />
     
-    <!-- <node name="spawn_jc" pkg="gazebo_ros" type="spawn_model" args="-param j_cups -x 0.5 -sdf -model j_cups" output="screen"/> -->
     <!-- <node name="spawn_fs" pkg="gazebo_ros" type="spawn_model" args="-param flat_screwdriver -x 0.5 -sdf -model flat_screwdriver" output="screen"/>  -->
     <!-- <node name="spawn_mc" pkg="gazebo_ros" type="spawn_model" args="-param medium_clamp -x 0.5 -sdf -model medium_clamp" output="screen"/> -->
-    <node name="spawn_ball" pkg="gazebo_ros" type="spawn_model" args="-param ball -x 0.5 -sdf -model ball" output="screen"/>
+    <!-- <node name="spawn_ball" pkg="gazebo_ros" type="spawn_model" args="-param ball -x 0.5 -sdf -model ball" output="screen"/> -->
+    <node name="spawn_mustard_bottle" pkg="gazebo_ros" type="spawn_model" args="-param mustard -x 0.75 -sdf -model mustard_bottle" output="screen"/>
 
 </launch>

@@ -63,6 +63,8 @@ add_service_files(
   GripperCommand.srv
   CurrentPose.srv
   SetJointVelocity.srv
+  StopMovement.srv
+  MoveJointRelative.srv
 )
 
 ## Generate actions in the 'action' folder

@@ -3,7 +3,7 @@ from std_msgs.msg import Float64
 from franka_gripper.msg import GraspActionGoal
 
 class Gripper:
-    def __init__(self, sim_mode=True):
+    def __init__(self, sim_mode):
         self.sim_mode = sim_mode
         
         if self.sim_mode:
@@ -30,5 +30,4 @@ class Gripper:
             grasp_data.goal.epsilon.inner = 0.5
             grasp_data.goal.epsilon.outer = 0.5
     
-            self.grasp_pub.publish(grasp_data)        
-        
+            self.grasp_pub.publish(grasp_data)                

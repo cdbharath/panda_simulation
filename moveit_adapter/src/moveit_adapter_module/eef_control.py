@@ -23,6 +23,7 @@ class MoveGroupControl:
 
         group_name = "panda_arm"
         move_group = moveit_commander.MoveGroupCommander(group_name)
+        move_group.set_planner_id('BiTRRT')
 
         planning_frame = move_group.get_planning_frame()
         # rospy.loginfo(" Planning frame: %s", planning_frame)
@@ -52,6 +53,9 @@ class MoveGroupControl:
         self.planning_frame = planning_frame
         self.eef_link = eef_link
         self.group_names = group_names
+
+    def stop_robot(self):
+        self.move_group.stop()
 
     def set_joint_velocity(self, velocity):
         self.move_group.set_max_velocity_scaling_factor(velocity)
