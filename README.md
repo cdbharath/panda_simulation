@@ -6,11 +6,12 @@ This is a part of benchmarking vision based grasping algorithms project. The rep
 
 ## Installation Instructions
 ```
+sudo apt install python-is-python3 ros-noetic-moveit-commander
+sudo apt install ros-<distro>-libfranka
 mkdir -p panda_sim_ws/src
 cd panda_sim_ws/src
 git clone https://github.com/cdbharath/panda_simulation.git
 cd ..
-sudo apt install ros-<distro>-libfranka
 catkin build
 source devel/setup.bash
 ```
