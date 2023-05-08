@@ -25,7 +25,7 @@ roslaunch panda_simulation panda_simulation.launch over_head:=true
 ```
 
 ## Note
-There are some common packages between simulator repository and benchmarking repository. It is better to have them in separate ROS workspaces
+There are some common packages between simulator repository and benchmarking repository. It is better to have them in separate ROS workspaces. If the manipulator is not able to grasp properly, try tuning the grasp plugin parameters (The instructions are in the references).
 
 ## References:
 1. [Panda Simulator](https://github.com/erdalpekel/panda_simulation "Panda Simulator")
